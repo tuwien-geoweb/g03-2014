@@ -73,7 +73,7 @@
 
         form.onsubmit = function(evt) {
             evt.preventDefault();
-            var url = 'http://nominatim.openstreetmap.org/search?q='+ form.query.value +'&format=json';
+            var url = 'http://nominatim.openstreetmap.org/search?format=json&q=' + form.query.value;
             var xhr = new XMLHttpRequest();
             xhr.open("GET", url, true);
             var result;
