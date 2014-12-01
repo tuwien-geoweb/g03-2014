@@ -1,32 +1,32 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<!-- Bootstrap resources -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="http://openlayers.org/en/v3.0.0/css/ol.css" type="text/css">
-	<style>
-	html, body, #map, .row.full, .full .col-md-8 {
-	margin: 0;
-	height: 100%;
-	}
-	</style>
+<!-- Bootstrap resources -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="http://openlayers.org/en/v3.0.0/css/ol.css" type="text/css">
+<style>
+html, body, #map, .row.full, .full .col-md-8 {
+margin: 0;
+height: 100%;
+}
+</style>
 <script src="http://openlayers.org/en/v3.0.0/build/ol.js" type="text/javascript"></script>
 <title>OpenLayers 3 example</title>
-	</head>
-	<body>
+</head>
+<body>
 <div class="row full">
 <div class="col-md-8">
 <div id="map"></div>
 </div>
 <div class="col-md-4">
-		<form id="search">
-			Search: <input name="query" type="text" size="40">
-			</form>
-		<br>
-		<br>
-	
-	<input type="button" name = "center" value = "Zentrieren" size="30" onclick = JavaScript:SetNewLocation()>
+<form id="search">
+Search: <input name="query" type="text" size="40">
+</form>
+<br>
+<br>
+<button id="check">
+Check: <input type="button" name = "center" value = "zentrieren" size="30">
 </button>
 </div>
 </div>
@@ -50,22 +50,16 @@ zoom: 11,
 maxZoom: 19
 })
 });
-
-function SetNewLocation(){
-
 var geolocation = new ol.Geolocation({
 projection: 'EPSG:3857'
 });
 geolocation.setTracking(true); // here the browser may ask for confirmation
 geolocation.on('change:position', function() {
-	geolocation.setTracking(false);
-	map.getView().setCenter(geolocation.getPosition());
-	marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
+geolocation.setTracking(false);
+map.getView().setCenter(geolocation.getPosition());
+marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
 });
-}
-	SetNewLocation(),
-	var form = document.getElementById("search");
-	
+var form = document.getElementById("search");
 form.onsubmit = function(evt) {
 evt.preventDefault();
 var url = 'http://nominatim.openstreetmap.org/search?format=json&q=' + form.query.value;
