@@ -60,7 +60,9 @@ map.getView().setCenter(geolocation.getPosition());
 marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
 });
 }
+SetNewLocation();
 var form = document.getElementById("search");
+
 form.onsubmit = function(evt) {
 evt.preventDefault();
 var url = 'http://nominatim.openstreetmap.org/search?format=json&q=' + form.query.value;
