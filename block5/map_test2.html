@@ -81,7 +81,7 @@
         geolocation.setTracking(true);
         geolocation.on('change:position', function() {
           geolocation.setTracking(false);
-          map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), map.maxZoom);
+          map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), map.maxZoom());
           marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
         });
       };
