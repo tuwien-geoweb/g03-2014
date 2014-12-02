@@ -75,16 +75,6 @@
           parseFloat(bbox[2]), parseFloat(bbox[0]),
           parseFloat(bbox[3]), parseFloat(bbox[1])
         ];
-        var point = new ol.Feature({
-          target: 'point',
-          layers: [
-            new ol.layer.Vector({
-              source: new ol.source.Vector({
-                features: [point]
-              })
-            })
-          ],
-        });
         map.getView().fitExtent(ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857'), map.getSize());
       };
       xhr.send();
