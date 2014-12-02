@@ -81,11 +81,8 @@
         geolocation.setTracking(true);
         geolocation.on('change:position', function() {
           geolocation.setTracking(false);
-        map.getView().fitExtent(ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857'), 
-          map.getSize())
-          &&
-        map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize());
-        marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
+          map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize());
+          marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
         });
       };
       xhr.send();
