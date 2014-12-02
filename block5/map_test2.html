@@ -79,7 +79,7 @@
           projection: 'EPSG: 3857'
         });
         geolocation.setTracking(true);
-        geolocation.on('change:position', function() {
+        geolocation.on( function() {
           geolocation.setTracking(false);
         map.getView().fitExtent(ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857'), 
           map.getSize(), geolocation.getAccuracyGeometry());
