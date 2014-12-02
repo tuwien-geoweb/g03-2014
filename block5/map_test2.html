@@ -78,6 +78,7 @@
         var geolocation = new ol.Geolocation({
           projection: 'EPSG: 3857'
         });
+        geolocation.getPosition(result);
         map.getView().fitExtent(ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857'), 
           map.getSize(), geolocation.getAccuracyGeometry(result));
         marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
