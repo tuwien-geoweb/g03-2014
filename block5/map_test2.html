@@ -75,7 +75,11 @@
           parseFloat(bbox[2]), parseFloat(bbox[0]),
           parseFloat(bbox[3]), parseFloat(bbox[1])
         ];
-        map.getView().fitExtent(ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857'), map.getSize());
+        var geolocation = new ol.Geolocation({
+          projection: 'EPSG: 3857'
+        });
+        geolocation.getAccuracyGeometry('result');
+        map.getView().fitExtent(ol.proj.transformExtent(extent, geolocation, 'EPSG:4326', 'EPSG:3857'), map.getSize());
         marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
       };
       xhr.send();
