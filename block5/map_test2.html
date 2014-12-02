@@ -78,9 +78,9 @@
         var geolocation = new ol.Geolocation({
           projection: 'EPSG: 3857'
         });
-        geolocation.getPosition(result);
+        geolocation.getPosition(result[0]);
         map.getView().fitExtent(ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857'), 
-          map.getSize(), geolocation.getAccuracyGeometry(result));
+          map.getSize(), geolocation.getAccuracyGeometry(result[0]));
         marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
       };
       xhr.send();
