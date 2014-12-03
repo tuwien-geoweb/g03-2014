@@ -24,7 +24,9 @@
           <form id="search">
             Search: <input name="query" type="text" size="40">
           </form>
-        <br>
+          <form id="citycheckbox">
+            <input type="checkbox" name="vienna" value="vienna" id="vie">Suchbeschränkung auf Wien
+          </form>
           <form id="button">
             <input type="button" name = "center" value = "Auf Standort Zentrieren" size = "30" onclick = "JavaScript:SetNewLocation();">
           </form>
@@ -76,7 +78,11 @@
 
       form.onsubmit = function(evt) {
         evt.preventDefault();
-        var url = 'http://nominatim.openstreetmap.org/search?format=json&q=' + form.query.value;
+        if (citycheckbox.vienna.checked == true) {
+          var vienna = '&city=Vienna';
+        }
+        else {var vienna = ''}
+        var url = 'http://nominatim.openstreetmap.org/search?format=json' + vienna + '&q=' + form.query.value;
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url, true);
         xhr.onload = function() {
