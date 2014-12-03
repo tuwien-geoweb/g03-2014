@@ -49,7 +49,8 @@
           maxZoom: 19
         })
       });
-      function SetNewLocation(){
+      
+      function SetNewLocation() {
         var geolocation = new ol.Geolocation({
           projection: 'EPSG:3857'
         });
@@ -60,8 +61,8 @@
           marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
         });
       }
-      SetNewLocation();
       var form = document.getElementById("search");
+      SetNewLocation();
 
       form.onsubmit = function(evt) {
         evt.preventDefault();
