@@ -41,7 +41,16 @@
          new ol.layer.Vector({
            source: new ol.source.Vector({
             features: [marker]
-           })
+           }),
+            style: new ol.style.Style({ 
+              image: new ol.style.Icon({ 
+                anchor: [0.5, 46], 
+                anchorXUnits: 'fraction', 
+                anchorYUnits: 'pixels', 
+                opacity: 0.75, 
+                src: 'https://cloud.githubusercontent.com/assets/9716583/5280362/7085b7c4-7af0-11e4-99fb-2ee019923e19.png' 
+              }) 
+            }) 
          })
         ],
         view: new ol.View({
