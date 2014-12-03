@@ -79,7 +79,7 @@
       form.onsubmit = function(evt) {
         evt.preventDefault();
         if (citycheckbox.vienna.checked == true) {
-          var vienna = '&country_code=at';
+          var vienna = '&address=Vienna';
         }
         else {var vienna = ''}
         var url = 'http://nominatim.openstreetmap.org/search?format=json' + vienna + '&q=' + form.query.value;
