@@ -1,4 +1,4 @@
 Data
 Wien
-A1 BevölkerungM
-A2 BevölkerungW
+A1 BevoelkerungM
+A2 BevoelkerungW
