@@ -1,5 +1,6 @@
 Data_Item
 STATAUSTRI Bezirkscode
+bezirke                             Bezirksgrenzen
 dichte                              Einwohnerdichte
 mietpreis80qm                       Durchschnittlicher Mietpreis 80qm
 eigentum80qm                        Durchschnittlicher Eigentumspreis 80qm
