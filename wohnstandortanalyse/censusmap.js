@@ -106,3 +106,11 @@ var p_ubahn = new ol.layer.Tile({
     params: {VERSION: '1.1.1', LAYERS: 'g03_2014:ubahnhalte', TRANSPARENT: true, FORMAT: 'image/png'},
   })
 });
+
+document.getElementById('punkt_ubahn').onclick = function(e){
+  if(this.checked==1){
+    map.addLayer(p_ubahn);
+    }else{
+      map.removeLayer(p_ubahn);
+    }
+  };
