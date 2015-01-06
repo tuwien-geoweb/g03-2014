@@ -1,12 +1,12 @@
 Data_Item
 STATAUSTRI Bezirkscode
-Einw Einwohner
-dichte Einwohnerdichte
-mietpreis80qm Durchschnittlicher Mietpreis 80qm
-eigentum80qm Durchschnittlicher Eigentumspreis 80qm
-Jahresbezug2011netto Durchschnittliche Haushaltseinkommen
-Grünflächeninha Grünfläche pro Bezirk in ha
-FlächeBezirk Bezirksfläche
-Anteilgruenbez Anteil Grünraum pro Bezirk
+Einw                                Einwohner
+dichte                              Einwohnerdichte
+mietpreis80qm                       Durchschnittlicher Mietpreis 80qm
+eigentum80qm                        Durchschnittlicher Eigentumspreis 80qm
+Jahresbezug2011netto                Durchschnittliche Haushaltseinkommen
+Grünflächeninha                     Grünfläche pro Bezirk in ha
+FlächeBezirk                        Bezirksfläche
+Anteilgruenbez                      Anteil Grünraum pro Bezirk
 Bevölkerungsveraenderungabsolut2034 Absolute Bevölkerungsänderung bis 2034
-Bevrelativ2034 Relative Bevölkerungsänderung bis 2034
+Bevrelativ2034                      Relative Bevölkerungsänderung bis 2034
