@@ -102,7 +102,7 @@ form.onsubmit = function(evt) {
 
 var p_ubahn = new ol.layer.Tile({
   source: new ol.source.TileWMS({
-    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/wms?service=WMS&version=1.1.0&request=GetMap&layers=g03_2014:ubahnhalte&styles=&bbox=16.260827,48.13051,16.508429,48.277511&width=555&height=330&srs=EPSG:4326&format=image%2Fpng',
+    url:'http://student.ifip.tuwien.ac.at/geoserver/wms',
     params: {VERSION: '1.1.1', LAYERS: 'g03_2014:ubahnhalte', TRANSPARENT: true, FORMAT: 'image/png'},
   })
 });
