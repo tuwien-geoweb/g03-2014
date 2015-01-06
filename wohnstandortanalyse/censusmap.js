@@ -107,7 +107,7 @@ var p_ubahn = new ol.layer.Tile({
   })
 });
 
-document.getElementById('punkt_ubahn').onclick = function(e){
+document.getElementById('p_ubahn').onclick = function(e){
   if(this.checked==1){
     map.addLayer(p_ubahn);
     }else{
