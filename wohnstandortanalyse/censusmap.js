@@ -107,10 +107,55 @@ var p_ubahn = new ol.layer.Tile({
   })
 });
 
+var p_haltestellen = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {VERSION: '1.1.1', LAYERS: 'g03_2014:haltestellen', TRANSPARENT: true, FORMAT: 'image/png'},
+  })
+})
+
+var p_uni = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {VERSION: '1.1.1', LAYERS: 'g03_2014:uni', TRANSPARENT: true, FORMAT: 'image/png'},
+  })
+})
+
+var p_kindergarten = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {VERSION: '1.1.1', LAYERS: 'g03_2014:kindergarten', TRANSPARENT: true, FORMAT: 'image/png'},
+  })
+})
+
 document.getElementById('punkt_ubahn').onclick = function(e){
   if(this.checked==1){
     olMap.addLayer(p_ubahn);
     }else{
       olMap.removeLayer(p_ubahn);
+    }
+  };
+  
+document.getElementById('punkt_haltestelle').onclick = function(e){
+  if(this.checked==1){
+    olMap.addLayer(p_haltestellen);
+    }else{
+      olMap.removeLayer(p_haltestellen);
+    }
+  };
+
+document.getElementById('punkt_uni').onclick = function(e){
+  if(this.checked==1){
+    olMap.addLayer(p_uni);
+    }else{
+      olMap.removeLayer(p_uni);
+    }
+  };
+  
+document.getElementById('punkt_kindergarten').onclick = function(e){
+  if(this.checked==1){
+    olMap.addLayer(p_kindergarten);
+    }else{
+      olMap.removeLayer(p_kindergarten);
     }
   };
