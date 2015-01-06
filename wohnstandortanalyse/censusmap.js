@@ -100,7 +100,7 @@ form.onsubmit = function(evt) {
   evt.preventDefault();
 };
 
-var p_ubahn = new ol.layer.Title({
+var p_ubahn = new ol.layer.Tile({
   source: new ol.source.TileWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
     params: {VERSION: '1.1.1', LAYERS: 'g03_2014:ubahnhalte', TRANSPARENT: true, FORMAT: 'image/png'},
