@@ -133,6 +133,10 @@ var l_bezirke = new ol.layer.Vector({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:bezirke&maxFeatures=50&outputFormat=json',
     projection: 'EPSG:3857'
   }),
+  stroke: new ol.style.Stroke({
+    color: '#636363',
+    width: 1.25
+  })
 })
 
 var l_gruenflaechen = new ol.layer.Vector({
