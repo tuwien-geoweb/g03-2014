@@ -5,7 +5,7 @@ var osmLayer = new ol.layer.Tile({source: new ol.source.OSM()});
 var wmsLayer = new ol.layer.Image({
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
-    params: {'LAYERS': 'g03_2014:bezirke'}
+    params: {'LAYERS': 'g03_2014:normalizedv'}
   }),
   opacity: 0.6
 });
@@ -128,6 +128,18 @@ var p_kindergarten = new ol.layer.Tile({
   })
 })
 
+var l_bezirke = new ol.layer.Vector({
+  source: new ol.source.GeoJSON({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:bezirke&maxFeatures=50&outputFormat=json',
+    projection: 'EPSG:3857'
+  }),
+  style: new ol.style.Style({
+    fill: new ol.style.Fill({
+      color: [251, 241, 83, 0.55]
+    })
+  })
+})
+
 var l_gruenflaechen = new ol.layer.Vector({
   source: new ol.source.GeoJSON({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:gruenflaechen&maxFeatures=50&outputFormat=json',
@@ -173,6 +185,14 @@ document.getElementById('punkt_kindergarten').onclick = function(e){
     }
   };
   
+ document.getElementById('layer_bezirke').onclick = function(e){
+  if(this.checked==1){
+    olMap.addLayer(l_bezirke);
+    }else{
+      olMap.removeLayer(l_bezirke);
+    }
+  }; 
+  
 document.getElementById('layer_gruenflaechen').onclick = function(e){
   if(this.checked==1){
     olMap.addLayer(l_gruenflaechen);
@@ -181,6 +201,7 @@ document.getElementById('layer_gruenflaechen').onclick = function(e){
     }
   };  
  
+  
   // Standorttest
   
     function SetNewLocation() {
