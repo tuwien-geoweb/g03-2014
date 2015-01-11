@@ -131,7 +131,7 @@ var p_kindergarten = new ol.layer.Tile({
 var l_bezirke = new ol.layer.Vector({
   source: new ol.source.GeoJSON({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:bezirke&maxFeatures=50&outputFormat=json',
-    projection: 'EPSG:3857'
+    projection: 'EPSG:4326'
   }),
   style: new ol.style.Style({
     stroke: new ol.style.Stroke({
