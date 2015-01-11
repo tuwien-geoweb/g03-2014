@@ -1,9 +1,9 @@
 Data_Item
 STATAUSTRI Bezirkscode
-                        Hintergrundkarte
 dichte                  Einwohnerdichte
 mietpreis80qm           Durchschnittlicher Mietpreis 80qm
 eigentum80qm            Durchschnittlicher Eigentumspreis 80qm
 Jahresbezug2011netto    Durchschnittliche Haushaltseinkommen
 Anteilgruenbez          Anteil Grünraum pro Bezirk
 Bevrelativ2034          Relative Bevölkerungsänderung bis 2034
+                        Hintergrundkarte
