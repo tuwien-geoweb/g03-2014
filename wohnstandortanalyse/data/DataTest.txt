@@ -1,6 +1,5 @@
 Data_Item
 STATAUSTRI Bezirkscode
-ROWID                   Hintergrundkarte
 dichte                  Einwohnerdichte
 mietpreis80qm           Durchschnittlicher Mietpreis 80qm
 eigentum80qm            Durchschnittlicher Eigentumspreis 80qm
