@@ -128,6 +128,19 @@ var p_kindergarten = new ol.layer.Tile({
   })
 })
 
+var l_gruenflaechen = new ol.layer.Vector({
+  source: new ol.source.GeoJSON({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:gruenflaechen&maxFeatures=50&outputFormat=json',
+    projection: 'EPSG:3857'
+  }),
+  style: new ol.style.Style({
+    fill: new ol.style.Fill({
+      color: [251, 241, 83, 0.55]
+    })
+  })
+})
+
+
 document.getElementById('punkt_ubahn').onclick = function(e){
   if(this.checked==1){
     olMap.addLayer(p_ubahn);
@@ -159,6 +172,14 @@ document.getElementById('punkt_kindergarten').onclick = function(e){
       olMap.removeLayer(p_kindergarten);
     }
   };
+  
+document.getElementById('layer_gruenflaechen').onclick = function(e){
+  if(this.checked==1){
+    olMap.addLayer(l_gruenflaechen);
+    }else{
+      olMap.removeLayer(l_gruenflaechen);
+    }
+  };  
  
   // Standorttest
   
