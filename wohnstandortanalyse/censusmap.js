@@ -159,3 +159,19 @@ document.getElementById('punkt_kindergarten').onclick = function(e){
       olMap.removeLayer(p_kindergarten);
     }
   };
+ 
+  // Standorttest
+  
+  function SetNewLocation() {
+var geolocation = new ol.Geolocation({
+projection: 'EPSG:3857'
+});
+geolocation.setTracking(true); // here the browser may ask for confirmation
+geolocation.on('change', function() {
+geolocation.setTracking(false);
+map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), {maxZoom: 18});
+marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
+});
+}
+SetNewLocation();
+var form = document.getElementById("search");
