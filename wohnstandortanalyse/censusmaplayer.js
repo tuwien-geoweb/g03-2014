@@ -153,6 +153,30 @@ var l_gruenflaechen = new ol.layer.Vector({
   })
 })
 
+var l_nationalpark = new ol.layer.Vector({
+  source: new ol.source.GeoJSON({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:nationalpark&maxFeatures=50&outputFormat=json',
+    projection: 'EPSG:3857'
+  }),
+  style: new ol.style.Style({
+    fill: new ol.style.Fill({
+      color: [88, 232, 73, 0.55]
+    })
+  })
+})
+
+var l_naturschutz = new ol.layer.Vector({
+  source: new ol.source.GeoJSON({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:naturschutz&maxFeatures=50&outputFormat=json',
+    projection: 'EPSG:3857'
+  }),
+  style: new ol.style.Style({
+    fill: new ol.style.Fill({
+      color: [109, 193, 101, 0.55]
+    })
+  })
+})
+
 
 document.getElementById('punkt_ubahn').onclick = function(e){
   if(this.checked==1){
@@ -201,6 +225,22 @@ document.getElementById('layer_gruenflaechen').onclick = function(e){
       olMap.removeLayer(l_gruenflaechen);
     }
   };  
+  
+document.getElementById('layer_nationalpark').onclick = function(e){
+  if(this.checked==1){
+    olMap.addLayer(l_nationalpark);
+    }else{
+      olMap.removeLayer(l_nationalpark);
+    }
+  }; 
+
+document.getElementById('layer_naturschutz').onclick = function(e){
+  if(this.checked==1){
+    olMap.addLayer(l_naturschutz);
+    }else{
+      olMap.removeLayer(l_naturschutz);
+    }
+  }; 
  
   
   // Standorttest
