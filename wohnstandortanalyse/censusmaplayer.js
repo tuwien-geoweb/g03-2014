@@ -146,7 +146,7 @@ var l_gruenflaechen = new ol.layer.Vector({
   }),
   style: new ol.style.Style({
     fill: new ol.style.Fill({
-      color: [251, 241, 83, 0.55]
+      color: [19, 166, 19, 0.55]
     })
   })
 })
