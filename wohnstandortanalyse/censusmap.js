@@ -173,5 +173,4 @@ map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), {max
 marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
 });
 }
-SetNewLocation();
-var form = document.getElementById("search");
+
