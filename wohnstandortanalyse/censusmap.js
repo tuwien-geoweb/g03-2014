@@ -170,4 +170,5 @@ geolocation.setTracking(false);
 map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), { nearest: true, maxZoom: 18 });
 console.log("Accuracy of Geometry: " + geolocation.getAccuracy() + " meters");
 });
-};
+}
+SetNewLocation();
