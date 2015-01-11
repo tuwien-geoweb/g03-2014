@@ -162,13 +162,39 @@ document.getElementById('punkt_kindergarten').onclick = function(e){
  
   // Standorttest
   
-  function SetNewLocation() {
-var geolocation = new ol.Geolocation({projection: 'EPSG:3857'});
+var marker = new ol.Feature();
+
+function SetNewLocation() {
+var geolocation = new ol.Geolocation({
+projection: 'EPSG:3857'
+});
 geolocation.setTracking(true); // here the browser may ask for confirmation
 geolocation.on('change', function() {
 geolocation.setTracking(false);
-map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), { nearest: true, maxZoom: 18 });
-console.log("Accuracy of Geometry: " + geolocation.getAccuracy() + " meters");
+map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), {maxZoom: 18});
+marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
 });
 }
 SetNewLocation();
+var form = document.getElementById("search");
+form.onsubmit = function(evt) {
+evt.preventDefault();
+if (citycheckbox.vienna.checked == true) {
+var vienna = '&city=Vienna';
+}
+else {var vienna = ''}
+var url = 'http://nominatim.openstreetmap.org/search?format=json' + vienna + '&q=' + form.query.value;
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url, true);
+xhr.onload = function() {
+var result = JSON.parse(xhr.responseText);
+var bbox = result[0].boundingbox;
+var extent = /** @type {ol.Extent} */ [
+parseFloat(bbox[2]), parseFloat(bbox[0]),
+parseFloat(bbox[3]), parseFloat(bbox[1])
+];
+map.getView().fitExtent(ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857'), map.getSize());
+marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
+};
+xhr.send();
+}
