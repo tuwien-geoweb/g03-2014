@@ -163,14 +163,11 @@ document.getElementById('punkt_kindergarten').onclick = function(e){
   // Standorttest
   
   function SetNewLocation() {
-var geolocation = new ol.Geolocation({
-projection: 'EPSG:3857'
-});
+var geolocation = new ol.Geolocation({projection: 'EPSG:3857'});
 geolocation.setTracking(true); // here the browser may ask for confirmation
 geolocation.on('change', function() {
 geolocation.setTracking(false);
-map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), {maxZoom: 18});
-marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
+map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), { nearest: true, maxZoom: 18 });
+console.log("Accuracy of Geometry: " + geolocation.getAccuracy() + " meters");
 });
-}
-
+};
