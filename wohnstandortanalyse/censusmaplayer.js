@@ -23,12 +23,12 @@ olMap = new ol.Map({
 });
 
 // Load variables into dropdown
-$.get("data/DataDict.txt", function(response) {
+$.get("data/DataTest.txt", function(response) {
   // We start at line 3 - line 1 is column names, line 2 is not a variable
   $(response.split('\n').splice(2)).each(function(index, line) {
     $('#topics').append($('<option>')
-      .val(line.substr(0, 36).trim())
-      .html(line.substr(36, 105).trim()));
+      .val(line.substr(0, 24).trim())
+      .html(line.substr(24, 105).trim()));
   });
 });
 
