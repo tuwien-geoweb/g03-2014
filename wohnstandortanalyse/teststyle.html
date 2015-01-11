@@ -103,6 +103,18 @@ width: 450px;
 <input type="button" name = "center" value = "Mein Standort" size = "30" onclick = "JavaScript:SetNewLocation();">
 </form>
 </div>
-<script type="text/javascript" src="censusmap.js"></script>
+<script type="text/javascript" src="censusmap.js">
+  
+  function SetNewLocation() {
+var geolocation = new ol.Geolocation({projection: 'EPSG:3857'});
+geolocation.setTracking(true); // here the browser may ask for confirmation
+geolocation.on('change', function() {
+geolocation.setTracking(false);
+map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), { nearest: true, maxZoom: 18 });
+console.log("Accuracy of Geometry: " + geolocation.getAccuracy() + " meters");
+});
+}
+SetNewLocation();
+</script>
 </body>
 </html>
