@@ -99,7 +99,7 @@ form.onsubmit = function(evt) {
   xhr.send();
   evt.preventDefault();
 };
-
+ 
    // Standorttest
     
     function newgeol() {
