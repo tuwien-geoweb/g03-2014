@@ -224,7 +224,6 @@ document.getElementById('layer_gruenflaechen').onclick = function(e){
     olMap.removeLayer(wmsLayer);
     }else{
       olMap.removeLayer(l_gruenflaechen);
-      olMap.addLayer(wmsLayer);
     }
   };  
   
