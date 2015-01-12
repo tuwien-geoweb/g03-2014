@@ -110,7 +110,8 @@ form.onsubmit = function(evt) {
       geolocation.setTracking(true); // here the browser may ask for confirmation
       geolocation.on('change', function() {
         geolocation.setTracking(false);
-        map.getView().setCenter(geolocation.getPosition());
+        map.getView().setCenter(ol.proj.transform([lat, long], 'EPSG:4326', 'EPSG:3857'));
+        map.getView().setZoom(5);
         marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
       });
    }
