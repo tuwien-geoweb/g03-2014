@@ -10,22 +10,6 @@ var wmsLayer = new ol.layer.Image({
   opacity: 0.6
 });
 
-// Marker layer
-var markerLayer = new ol.layer.Image({
-           source: new ol.source.Image({
-            features: [marker]
-           }),
-            style: new ol.style.Style({ 
-              image: new ol.style.Icon({ 
-                anchor: [0.5, 46], 
-                anchorXUnits: 'fraction', 
-                anchorYUnits: 'pixels', 
-                opacity: 0.75, 
-                src: 'https://cloud.githubusercontent.com/assets/9716583/5280362/7085b7c4-7af0-11e4-99fb-2ee019923e19.png' 
-              }) 
-            }) 
-         })
-
 
 // Map object
 olMap = new ol.Map({
@@ -39,7 +23,6 @@ olMap = new ol.Map({
   })
 });
 
-var marker = new ol.Feature();
 
 // Load variables into dropdown
 $.get("data/DataDict.txt", function(response) {
