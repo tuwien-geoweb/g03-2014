@@ -101,6 +101,19 @@ form.onsubmit = function(evt) {
   evt.preventDefault();
 };
 
+ // Standorttest
+  
+    function newgeol() {
+      var geolocation = new ol.Geolocation({
+      projection: 'EPSG:3857'
+      });
+      geolocation.setTracking(true); // here the browser may ask for confirmation
+      geolocation.on('change', function() {
+        geolocation.setTracking(false);
+        olMap.getView().fitGeometry(geolocation.getAccuracyGeometry(), olMap.getSize(), {maxZoom: 18});
+        marker.setGeometry(new ol.geom.Point(olMap.getView().getCenter()));
+      });
+   }
   
 var p_ubahn = new ol.layer.Tile({
   source: new ol.source.TileWMS({
