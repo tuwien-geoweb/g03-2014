@@ -11,8 +11,8 @@ var wmsLayer = new ol.layer.Image({
 });
 
 // Marker layer
-var markerLayer = new ol.layer.Vector({
-           source: new ol.source.Vector({
+var markerLayer = new ol.layer.Image({
+           source: new ol.source.Image({
             features: [marker]
            }),
             style: new ol.style.Style({ 
@@ -31,7 +31,7 @@ var markerLayer = new ol.layer.Vector({
 olMap = new ol.Map({
   target: 'map',
   renderer: 'canvas',
-  layers: [osmLayer, wmsLayer,markerLayer],
+  layers: [osmLayer, wmsLayer, markerLayer],
   view: new ol.View({
     center: ol.proj.transform([16.3, 48.2], 'EPSG:4326', 'EPSG:3857'),
     zoom: 11,
