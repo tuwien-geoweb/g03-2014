@@ -103,9 +103,6 @@ form.onsubmit = function(evt) {
 
   // Standorttest
   
-  var marker = new ol.Feature();
-  
-  
     function newgeol() {
       var geolocation = new ol.Geolocation({
       projection: 'EPSG:3857'
