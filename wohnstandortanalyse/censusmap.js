@@ -14,22 +14,7 @@ var wmsLayer = new ol.layer.Image({
 olMap = new ol.Map({
   target: 'map',
   renderer: 'canvas',
-  layers: [osmLayer, wmsLayer
-           new ol.layer.Vector({
-           source: new ol.source.Vector({
-            features: [marker]
-           }),
-            style: new ol.style.Style({ 
-              image: new ol.style.Icon({ 
-                anchor: [0.5, 46], 
-                anchorXUnits: 'fraction', 
-                anchorYUnits: 'pixels', 
-                opacity: 0.75, 
-                src: 'https://cloud.githubusercontent.com/assets/9716583/5280362/7085b7c4-7af0-11e4-99fb-2ee019923e19.png' 
-              }) 
-            }) 
-         })
-  ],
+  layers: [osmLayer, wmsLayer],
   view: new ol.View({
     center: ol.proj.transform([16.3, 48.2], 'EPSG:4326', 'EPSG:3857'),
     zoom: 11,
