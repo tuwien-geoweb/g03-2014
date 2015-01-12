@@ -15,6 +15,7 @@ olMap = new ol.Map({
   target: 'map',
   renderer: 'canvas',
   layers: [osmLayer, wmsLayer],
+  
   view: new ol.View({
     center: ol.proj.transform([16.3, 48.2], 'EPSG:4326', 'EPSG:3857'),
     zoom: 11,
@@ -109,7 +110,7 @@ form.onsubmit = function(evt) {
       geolocation.setTracking(true); // here the browser may ask for confirmation
       geolocation.on('change', function() {
         geolocation.setTracking(false);
-        ol.map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), {maxZoom: 18});
+        map.getView().setCenter(geolocation.getPosition());
         marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
       });
    }
