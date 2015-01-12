@@ -221,26 +221,30 @@ document.getElementById('punkt_kindergarten').onclick = function(e){
 document.getElementById('layer_gruenflaechen').onclick = function(e){
   if(this.checked==1){
     olMap.addLayer(l_gruenflaechen);
-    olMap.removeLayer(wmsLayer)
+    olMap.removeLayer(wmsLayer);
     }else{
       olMap.removeLayer(l_gruenflaechen);
-      olMap.addLayer(wmsLayer)
+      olMap.addLayer(wmsLayer);
     }
   };  
   
 document.getElementById('layer_nationalpark').onclick = function(e){
   if(this.checked==1){
     olMap.addLayer(l_nationalpark);
+    olMap.removeLayer(wmsLayer);
     }else{
       olMap.removeLayer(l_nationalpark);
+      olMap.addLayer(wmsLayer);
     }
   }; 
 
 document.getElementById('layer_naturschutz').onclick = function(e){
   if(this.checked==1){
     olMap.addLayer(l_naturschutz);
+    olMap.removeLayer(wmsLayer);
     }else{
       olMap.removeLayer(l_naturschutz);
+      olMap.addLayer(wmsLayer);
     }
   }; 
  
