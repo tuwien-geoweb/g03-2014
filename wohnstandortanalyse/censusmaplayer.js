@@ -109,7 +109,7 @@ form.onsubmit = function(evt) {
       geolocation.setTracking(true); // here the browser may ask for confirmation
       geolocation.on('change', function() {
         geolocation.setTracking(false);
-        map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), {maxZoom: 18});
+        ol.map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), {maxZoom: 18});
         marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
       });
    }
