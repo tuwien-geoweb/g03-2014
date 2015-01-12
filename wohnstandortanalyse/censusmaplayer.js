@@ -229,7 +229,7 @@ document.getElementById('layer_gruenflaechen').onclick = function(e){
       olMap.removeLayer(l_gruenflaechen);
       olMap.addLayer(wmsLayer);
     }
-  }
+   }
   };  
   
 document.getElementById('layer_nationalpark').onclick = function(e){
@@ -237,7 +237,12 @@ document.getElementById('layer_nationalpark').onclick = function(e){
     olMap.addLayer(l_nationalpark);
     olMap.removeLayer(wmsLayer);
     }else{
+      if(olMap.wmsLayervisible=='1'){
       olMap.removeLayer(l_nationalpark);
+     }else{
+       olMap.removeLayer(l_nationalpark);
+       olMap.addLayer(wmsLayer);
+     }
     }
   }; 
 
@@ -246,7 +251,12 @@ document.getElementById('layer_naturschutz').onclick = function(e){
     olMap.addLayer(l_naturschutz);
     olMap.removeLayer(wmsLayer);
     }else{
+      if(olMap.wmsLayervisible=='1'){
       olMap.removeLayer(l_naturschutz);
+      }else{
+        olMap.removeLayer(l_naturschutz);
+        olMap.addLayer(wmsLayer);
+      }
     }
   }; 
  
