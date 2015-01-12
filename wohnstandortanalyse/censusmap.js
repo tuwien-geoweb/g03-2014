@@ -100,6 +100,19 @@ form.onsubmit = function(evt) {
   evt.preventDefault();
 };
 
+    // Standorttest
+    function newgeol() {
+    var geolocation = new ol.Geolocation({
+    projection: 'EPSG:3857'
+    });
+    geolocation.setTracking(true); // here the browser may ask for confirmation
+    geolocation.on('change', function() {
+    geolocation.setTracking(false);
+    olMap.getView().fitGeometry(geolocation.getAccuracyGeometry(), olMap.getSize(), {maxZoom: 18});
+    marker.setGeometry(new ol.geom.Point(olMap.getView().getCenter()));
+    });
+    }
+
 var p_ubahn = new ol.layer.Tile({
   source: new ol.source.TileWMS({
     url:'http://student.ifip.tuwien.ac.at/geoserver/wms',
@@ -160,17 +173,3 @@ document.getElementById('punkt_kindergarten').onclick = function(e){
     }
   };
  
-  // Standorttest
-  
-    function SetNewLocation() {
-      var geolocation = new ol.Geolocation({
-      projection: 'EPSG:3857'
-      });
-      geolocation.setTracking(true); // here the browser may ask for confirmation
-      geolocation.on('change', function() {
-        geolocation.setTracking(false);
-        map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), {maxZoom: 18});
-        marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
-      });
-   }
-  SetNewLocation();
