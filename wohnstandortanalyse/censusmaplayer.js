@@ -102,7 +102,7 @@ form.onsubmit = function(evt) {
 
   // Standorttest
   
-    function SetNewLocation() {
+    function newgeol() {
       var geolocation = new ol.Geolocation({
       projection: 'EPSG:3857'
       });
@@ -113,7 +113,6 @@ form.onsubmit = function(evt) {
         marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
       });
    }
-  SetNewLocation();
   
 var p_ubahn = new ol.layer.Tile({
   source: new ol.source.TileWMS({
