@@ -229,6 +229,7 @@ document.getElementById('layer_gruenflaechen').onclick = function(e){
       olMap.removeLayer(l_gruenflaechen);
       olMap.addLayer(wmsLayer);
     }
+  }
   };  
   
 document.getElementById('layer_nationalpark').onclick = function(e){
