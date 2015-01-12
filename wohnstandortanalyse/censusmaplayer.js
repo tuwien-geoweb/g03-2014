@@ -221,7 +221,7 @@ document.getElementById('punkt_kindergarten').onclick = function(e){
 document.getElementById('layer_gruenflaechen').onclick = function(e){
   if(this.checked==1){
     olMap.addLayer(l_gruenflaechen);
-    ol.wmsLayer.setVisible('false');
+    olMap.removeLayer(wmsLayer)
     }else{
       olMap.removeLayer(l_gruenflaechen);
       olMap.addLayer(wmsLayer);
