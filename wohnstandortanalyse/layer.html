@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Wohnstandortanalyse Wien</title>
-<!-- JQuery -->
-<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-<!-- Bootstrap -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<!-- OpenLayers -->
-<link rel="stylesheet" href="http://openlayers.org/en/v3.0.0/css/ol.css" type="text/css">
-<script src="http://openlayers.org/en/v3.0.0/build/ol.js" type="text/javascript"></script>
+    <title>Wohnstandortanalyse Wien</title>
+    <!-- JQuery -->
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- OpenLayers -->
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.0.0/css/ol.css" type="text/css">
+    <script src="http://openlayers.org/en/v3.0.0/build/ol.js" type="text/javascript"></script>
 <!-- Our Application -->
-<style>
-html, body, #map, .col-md-8 {
-background-color: #e5e5e5;
-margin: 0;
-height: 100%;
-}
-.col-md-4{
-padding-top: 50px;
-height: 100%;
-}
-#map {
-padding-top: 50px;
-}
-.legend {
-position: absolute;
-z-index: 1;
-left: 10px;
-bottom: 10px;
-opacity: 0.6;
-}
-.popover {
-max-width: 500px;
-}
-.popover-title {
-float: right;
-background: none;
-border: 0;
-cursor: pointer;
-}
-.popover-content iframe {
-width: 460px;
-height: 150px;
-border: 0;
-}
-.navbar-form .input-group {
-width: 300px;
-padding-right: 20px;
-float: left;
-}
-.navbar-form .form-group {
-width: 450px;
+    <style>
+    html, body, #map, .col-md-8 {
+    background-color: #e5e5e5;
+    margin: 0;
+    height: 100%;
+    }
+    .col-md-4{
+    padding-top: 50px;
+    height: 100%;
+    }
+    #map {
+    padding-top: 50px;
+    }
+    .legend {
+    position: absolute;
+    z-index: 1;
+    left: 10px;
+    bottom: 10px;
+    opacity: 0.6;
+    }
+    .popover {
+    max-width: 500px;
+    }
+    .popover-title {
+    float: right;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    }
+    .popover-content iframe {
+    width: 460px;
+    height: 150px;
+    border: 0;
+    }
+    .navbar-form .input-group {
+    width: 300px;
+    padding-right: 20px;
+    float: left;
+    }
+    .navbar-form .form-group {
+    width: 450px;
 }
 </style>
 </head>
@@ -105,7 +105,7 @@ width: 450px;
 <div class="checkbox"><label><input type="checkbox" id="layer_nationalpark"> Nationalparks</label></div>
 <div class="checkbox"><label><input type="checkbox" id="layer_naturschutz"> Naturschutzgebiete</label></div>
 <form id="button">
-<input type="button" name = "center" value = "Mein Standort" size = "30" onclick = "JavaScript:SetNewLocation();">
+<input type="button" name = "center" value = "Mein Standort" size = "30" onclick = "JavaScript:geolocation();">
 </form>
 </div>
 <script type="text/javascript" src="censusmaplayer.js"></script>
