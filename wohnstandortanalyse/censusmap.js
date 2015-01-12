@@ -10,7 +10,6 @@ var wmsLayer = new ol.layer.Image({
   opacity: 0.6
 });
 
-
 // Map object
 olMap = new ol.Map({
   target: 'map',
