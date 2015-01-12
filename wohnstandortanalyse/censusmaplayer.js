@@ -105,12 +105,6 @@ form.onsubmit = function(evt) {
   
   var marker = new ol.Feature();
   
-      new ol.layer.Vector({
-    source: new ol.source.Vector({
-    features: [marker]
-    })
-    })
-    ],
   
     function newgeol() {
       var geolocation = new ol.Geolocation({
