@@ -142,6 +142,56 @@ var p_kindergarten = new ol.layer.Tile({
   })
 })
 
+var l_bezirke = new ol.layer.Vector({
+  source: new ol.source.GeoJSON({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:bezirke&maxFeatures=50&outputFormat=json',
+    projection: 'EPSG:3857'
+  }),
+  style: new ol.style.Style({
+    stroke: new ol.style.Stroke({
+    color: '#636363',
+    width: 1.25
+    })
+  })
+})
+
+var l_gruenflaechen = new ol.layer.Vector({
+  source: new ol.source.GeoJSON({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:gruenflaechen&maxFeatures=50&outputFormat=json',
+    projection: 'EPSG:3857'
+  }),
+  style: new ol.style.Style({
+    fill: new ol.style.Fill({
+      color: [19, 166, 19, 0.80]
+    })
+  })
+})
+
+var l_nationalpark = new ol.layer.Vector({
+  source: new ol.source.GeoJSON({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:nationalpark&maxFeatures=50&outputFormat=json',
+    projection: 'EPSG:3857'
+  }),
+  style: new ol.style.Style({
+    fill: new ol.style.Fill({
+      color: [88, 232, 73, 0.80]
+    })
+  })
+})
+
+var l_naturschutz = new ol.layer.Vector({
+  source: new ol.source.GeoJSON({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:naturschutz&maxFeatures=50&outputFormat=json',
+    projection: 'EPSG:3857'
+  }),
+  style: new ol.style.Style({
+    fill: new ol.style.Fill({
+      color: [109, 193, 101, 0.80]
+    })
+  })
+})
+
+
 document.getElementById('punkt_ubahn').onclick = function(e){
   if(this.checked==1){
     olMap.addLayer(p_ubahn);
@@ -174,3 +224,40 @@ document.getElementById('punkt_kindergarten').onclick = function(e){
     }
   };
  
+ document.getElementById('layer_bezirke').onclick = function(e){
+  if(this.checked==1){
+    olMap.addLayer(l_bezirke);
+    }else{
+      olMap.removeLayer(l_bezirke);
+    }
+  }; 
+  
+document.getElementById('layer_gruenflaechen').onclick = function(e){
+  if(this.checked==1){
+    olMap.addLayer(l_gruenflaechen);
+    olMap.removeLayer(wmsLayer)
+    }else{
+      olMap.removeLayer(l_gruenflaechen);
+      olMap.addLayer(wmsLayer);
+    }
+  };  
+  
+document.getElementById('layer_nationalpark').onclick = function(e){
+  if(this.checked==1){
+    olMap.addLayer(l_nationalpark);
+    olMap.removeLayer(wmsLayer);
+    }else{
+       olMap.removeLayer(l_nationalpark);
+       olMap.addLayer(wmsLayer);
+    }
+  }; 
+
+document.getElementById('layer_naturschutz').onclick = function(e){
+  if(this.checked==1){
+    olMap.addLayer(l_naturschutz);
+    olMap.removeLayer(wmsLayer);
+    }else{
+        olMap.removeLayer(l_naturschutz);
+         olMap.addLayer(wmsLayer);
+    }
+  };
