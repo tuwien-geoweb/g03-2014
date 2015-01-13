@@ -113,6 +113,7 @@ form.onsubmit = function(evt) {
         marker.setGeometry(new ol.geom.Point(olMap.getView().getCenter()));
       });
    }
+   newgeol();
   
 var p_ubahn = new ol.layer.Tile({
   source: new ol.source.TileWMS({
