@@ -158,7 +158,7 @@ var l_bezirke = new ol.layer.Vector({
 
 var l_gruenflaechen = new ol.layer.Vector({
   source: new ol.source.GeoJSON({
-    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:gruenflaechen&maxFeatures=50&outputFormat=json',
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:erholungsgebiet&maxFeatures=50&outputFormat=json',
     projection: 'EPSG:3857'
   }),
   style: new ol.style.Style({
@@ -168,26 +168,26 @@ var l_gruenflaechen = new ol.layer.Vector({
   })
 })
 
-var l_nationalpark = new ol.layer.Vector({
+var l_wohngebiet = new ol.layer.Vector({
   source: new ol.source.GeoJSON({
-    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:nationalpark&maxFeatures=50&outputFormat=json',
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:Baugebiet&maxFeatures=50&outputFormat=json',
     projection: 'EPSG:3857'
   }),
   style: new ol.style.Style({
     fill: new ol.style.Fill({
-      color: [88, 232, 73, 0.80]
+      color: [207, 20, 20, 0.80]
     })
   })
 })
 
-var l_naturschutz = new ol.layer.Vector({
+var l_industrie = new ol.layer.Vector({
   source: new ol.source.GeoJSON({
-    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:naturschutz&maxFeatures=50&outputFormat=json',
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:industrie&maxFeatures=50&outputFormat=json',
     projection: 'EPSG:3857'
   }),
   style: new ol.style.Style({
     fill: new ol.style.Fill({
-      color: [109, 193, 101, 0.80]
+      color: [33, 73, 188, 0.80]
     })
   })
 })
@@ -244,23 +244,23 @@ document.getElementById('layer_gruenflaechen').onclick = function(e){
     }
   };  
   
-document.getElementById('layer_nationalpark').onclick = function(e){
+document.getElementById('layer_wohngebiet').onclick = function(e){
   if(this.checked==1){
-    olMap.addLayer(l_nationalpark);
+    olMap.addLayer(l_wohngebiet);
     olMap.removeLayer(wmsLayer);
     }else{
-       olMap.removeLayer(l_nationalpark);
+       olMap.removeLayer(l_wohngebiet);
        olMap.removeLayer(wmsLayer);
        olMap.addLayer(wmsLayer);
     }
   }; 
 
-document.getElementById('layer_naturschutz').onclick = function(e){
+document.getElementById('layer_industrie').onclick = function(e){
   if(this.checked==1){
-    olMap.addLayer(l_naturschutz);
+    olMap.addLayer(l_industrie);
     olMap.removeLayer(wmsLayer);
     }else{
-        olMap.removeLayer(l_naturschutz);
+        olMap.removeLayer(l_industrie);
         olMap.removeLayer(wmsLayer);
         olMap.addLayer(wmsLayer);
     }
