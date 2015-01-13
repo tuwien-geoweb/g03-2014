@@ -156,7 +156,7 @@ var l_bezirke = new ol.layer.Vector({
   })
 })
 
-var l_gruenflaechen = new ol.layer.Vector({
+var l_erholung = new ol.layer.Vector({
   source: new ol.source.GeoJSON({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:erholungsgebiet&maxFeatures=50&outputFormat=json',
     projection: 'EPSG:3857'
@@ -233,12 +233,12 @@ document.getElementById('punkt_kindergarten').onclick = function(e){
     }
   }; 
   
-document.getElementById('layer_gruenflaechen').onclick = function(e){
+document.getElementById('layer_erholung').onclick = function(e){
   if(this.checked==1){
-    olMap.addLayer(l_gruenflaechen);
+    olMap.addLayer(l_erholung);
     olMap.removeLayer(wmsLayer)
     }else{
-      olMap.removeLayer(l_gruenflaechen);
+      olMap.removeLayer(l_erholung);
       olMap.removeLayer(wmsLayer);
       olMap.addLayer(wmsLayer);
     }
