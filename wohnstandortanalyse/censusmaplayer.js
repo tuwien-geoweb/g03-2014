@@ -174,11 +174,6 @@ var l_erholung = new ol.layer.Image({
     params: {'LAYERS': 'g03_2014:erholungsgebiet'}
   }),
   opacity: 0.6,
-  style: new ol.style.Style({
-    fill: new ol.style.Fill({
-      color: [19, 166, 19, 0.80]
-    })
-  })
 })
 
 var l_wohngebiet = new ol.layer.Vector({
