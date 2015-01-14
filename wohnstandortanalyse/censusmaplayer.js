@@ -176,16 +176,24 @@ var l_erholung = new ol.layer.Image({
   opacity: 0.6,
 })
 
-var l_wohngebiet = new ol.layer.Vector({
-  source: new ol.source.GeoJSON({
-    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:Baugebiet&maxFeatures=50&outputFormat=json',
-    projection: 'EPSG:3857'
+//var l_wohngebiet = new ol.layer.Vector({
+  //source: new ol.source.GeoJSON({
+    //url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:Baugebiet&maxFeatures=50&outputFormat=json',
+    //projection: 'EPSG:3857'
+  //}),
+  //style: new ol.style.Style({
+    //fill: new ol.style.Fill({
+      //color: [207, 20, 20, 0.80]
+    //})
+  //})
+//})
+
+var l_wohngebiet = new ol.layer.Image({
+  source: new ol.source.ImageWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {'LAYERS': 'g03_2014:Baugebiet'}
   }),
-  style: new ol.style.Style({
-    fill: new ol.style.Fill({
-      color: [207, 20, 20, 0.80]
-    })
-  })
+  opacity: 0.6,
 })
 
 var l_industrie = new ol.layer.Vector({
