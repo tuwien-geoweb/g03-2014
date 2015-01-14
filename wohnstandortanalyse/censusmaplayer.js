@@ -236,7 +236,7 @@ document.getElementById('punkt_kindergarten').onclick = function(e){
 document.getElementById('layer_erholung').onclick = function(e){
   if(this.checked==1){
     olMap.addLayer(l_erholung);
-    olMap.removeLayer(wmsLayer)
+    olMap.removeLayer(wmsLayer);
     }else{
       olMap.removeLayer(l_erholung);
       olMap.removeLayer(wmsLayer);
