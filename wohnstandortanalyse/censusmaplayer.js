@@ -156,11 +156,24 @@ var l_bezirke = new ol.layer.Vector({
   })
 })
 
-var l_erholung = new ol.layer.Vector({
-  source: new ol.source.GeoJSON({
-    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:erholungsgebiet&maxFeatures=50&outputFormat=json',
-    projection: 'EPSG:3857'
+//var l_erholung = new ol.layer.Vector({
+  //source: new ol.source.GeoJSON({
+    //url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2014:erholungsgebiet&maxFeatures=50&outputFormat=json',
+    //projection: 'EPSG:3857'
+  //}),
+  //style: new ol.style.Style({
+    //fill: new ol.style.Fill({
+      //color: [19, 166, 19, 0.80]
+    //})
+  //})
+//})
+
+var l_erholung = new ol.layer.Image({
+  source: new ol.source.ImageWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {'LAYERS': 'g03_2014:erholungsgebiet'}
   }),
+  opacity: 0.6,
   style: new ol.style.Style({
     fill: new ol.style.Fill({
       color: [19, 166, 19, 0.80]
