@@ -246,6 +246,8 @@ document.getElementById('punkt_kindergarten').onclick = function(e){
     olMap.addLayer(l_bezirke);
     }else{
       olMap.removeLayer(l_bezirke);
+      olMap.removeLayer(wmsLayer);
+      olMap.addLayer(wmsLayer);
     }
   }; 
   
