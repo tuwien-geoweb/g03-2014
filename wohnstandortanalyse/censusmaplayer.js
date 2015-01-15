@@ -18,7 +18,7 @@ olMap = new ol.Map({
   view: new ol.View({
     center: ol.proj.transform([16.3, 48.2], 'EPSG:4326', 'EPSG:3857'),
     zoom: 11,
-    maxZoom: 21
+    maxZoom: 18
   })
 });
 
@@ -109,7 +109,7 @@ form.onsubmit = function(evt) {
       geolocation.setTracking(true); // here the browser may ask for confirmation
       geolocation.on('change', function() {
         geolocation.setTracking(false);
-        olMap.getView().fitGeometry(geolocation.getAccuracyGeometry(), olMap.getSize(), {maxZoom: 21});
+        olMap.getView().fitGeometry(geolocation.getAccuracyGeometry(), olMap.getSize(), {maxZoom: 18});
         marker.setGeometry(new ol.geom.Point(olMap.getView().getCenter()));
       });
    }
