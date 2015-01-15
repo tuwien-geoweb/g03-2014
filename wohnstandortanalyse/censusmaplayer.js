@@ -111,6 +111,7 @@ form.onsubmit = function(evt) {
         geolocation.setTracking(false);
         olMap.getView().fitGeometry(geolocation.getAccuracyGeometry(), olMap.getSize(), {maxZoom: 18});
         marker.setGeometry(new ol.geom.Point(olMap.getView().getCenter()));
+        olMap.getView().setZoom(18);
       });
    }
    newgeol();
