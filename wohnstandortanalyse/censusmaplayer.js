@@ -260,10 +260,9 @@ document.getElementById('layer_erholung').onclick = function(e){
     olMap.addLayer(l_erholung);
     olMap.removeLayer(wmsLayer);
     }else{
-      if(l_wohngebiet.visible==0 && l_industrie.visible==0 && wmsLayer.visible==0){
+      if(l_wohngebietvisible==0 && l_industrievisible==0 && wmsLayervisible==0){
         olMap.removeLayer(l_erholung);
         olMap.addLayer(wmsLayer);
-        wmsLayer.setVisible==1;
         }else{
           olMap.removeLayer(l_erholung);
         }
