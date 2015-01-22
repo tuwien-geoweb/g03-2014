@@ -265,7 +265,7 @@ document.getElementById('layer_erholung').onclick = function(e){
         olMap.addLayer(wmsLayer);
         }else{
           olMap.removeLayer(l_erholung);
-        }
+        };
     }
   };  
   
