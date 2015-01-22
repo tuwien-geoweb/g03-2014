@@ -261,8 +261,8 @@ document.getElementById('layer_erholung').onclick = function(e){
     olMap.removeLayer(wmsLayer);
     }else{
       olMap.removeLayer(l_erholung);
-      olMap.removeLayer(wmsLayer);
-      if(l_industrie.visible==false && l_wohngebiet.visible==false){
+      olMap.removeLayer(wmsLayer);}
+      if(this.checked==0 && l_industrie.visible==false && l_wohngebiet.visible==false){
         olMap.addLayer(wmsLayer);
       }else{
         
