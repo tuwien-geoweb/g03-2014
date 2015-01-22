@@ -260,14 +260,11 @@ document.getElementById('layer_erholung').onclick = function(e){
     olMap.addLayer(l_erholung);
     olMap.removeLayer(wmsLayer);
     }else{
-      if(l_wohngebietvisible==0 && l_industrievisible==0 && wmsLayervisible==0){
-        olMap.removeLayer(l_erholung);
-        olMap.addLayer(wmsLayer);
-        }else{
-          olMap.removeLayer(l_erholung);
-        }
-    };
-  };  
+      olMap.removeLayer(l_erholung);
+      olMap.removeLayer(wmsLayer);
+      olMap.addLayer(wmsLayer);
+    }
+  }; 
   
 document.getElementById('layer_wohngebiet').onclick = function(e){
   if(this.checked==1){
