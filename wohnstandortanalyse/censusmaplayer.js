@@ -101,6 +101,12 @@ form.onsubmit = function(evt) {
 };
 
  // Standorttest
+ var marker = new ol.Feature();
+ new ol.layer.Vector({
+   source: new ol.source.Vector({
+     features: [marker]
+   })
+ });
   
     function newgeol() {
       var geolocation = new ol.Geolocation({
@@ -111,7 +117,7 @@ form.onsubmit = function(evt) {
         geolocation.setTracking(false);
         olMap.getView().fitGeometry(geolocation.getAccuracyGeometry(), olMap.getSize(), {maxZoom: 18});
         //olMap.getView().setZoom(18);
-        //marker.setGeometry(new ol.geom.Point(olMap.getView().getCenter()));
+        marker.setGeometry(new ol.geom.Point(olMap.getView().getCenter()));
       });
    }
    newgeol();
