@@ -262,7 +262,7 @@ document.getElementById('layer_erholung').onclick = function(e){
     }else{
       olMap.removeLayer(l_erholung);
       olMap.removeLayer(wmsLayer);
-      if(l_erholung.visible==false && l_wohngebiet.visible==false){
+      if(l_industrie.visible==false && l_wohngebiet.visible==false){
         olMap.addLayer(wmsLayer);
       }else{
         
@@ -277,7 +277,11 @@ document.getElementById('layer_wohngebiet').onclick = function(e){
     }else{
        olMap.removeLayer(l_wohngebiet);
        olMap.removeLayer(wmsLayer);
-       olMap.addLayer(wmsLayer);
+       if(l_erholung.visible==false && l_industrie.visible==false){
+        olMap.addLayer(wmsLayer);
+       }else{
+         
+       }
     }
   }; 
 
@@ -288,6 +292,10 @@ document.getElementById('layer_industrie').onclick = function(e){
     }else{
         olMap.removeLayer(l_industrie);
         olMap.removeLayer(wmsLayer);
-        olMap.addLayer(wmsLayer);
+        if(l_erholung.visible==false && l_wohngebiet.visible==false){
+          olMap.addLayer(wmsLayer);
+        }else{
+          
+        }
     }
   }; 
