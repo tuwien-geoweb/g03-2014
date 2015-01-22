@@ -266,7 +266,7 @@ document.getElementById('layer_erholung').onclick = function(e){
         }else{
           olMap.removeLayer(l_erholung);
         };
-    }
+    };
   };  
   
 document.getElementById('layer_wohngebiet').onclick = function(e){
