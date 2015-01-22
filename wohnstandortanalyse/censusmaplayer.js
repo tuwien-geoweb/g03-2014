@@ -262,7 +262,11 @@ document.getElementById('layer_erholung').onclick = function(e){
     }else{
       olMap.removeLayer(l_erholung);
       olMap.removeLayer(wmsLayer);
-      olMap.addLayer(wmsLayer);
+      if(l_erholung.visible==false && l_wohngebiet.visible==false){
+        olMap.addLayer(wmsLayer);
+      }else{
+        
+      }
     }
   };  
   
