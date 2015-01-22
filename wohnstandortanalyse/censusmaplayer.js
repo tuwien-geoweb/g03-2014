@@ -10,11 +10,14 @@ var wmsLayer = new ol.layer.Image({
   opacity: 0.6
 });
 
+var marker = new ol.Feature();
+var points = new ol.layer.Vector({source: new ol.source.Vector({features: [marker]})});
+
 // Map object
 olMap = new ol.Map({
   target: 'map',
   renderer: 'canvas',
-  layers: [osmLayer, wmsLayer],
+  layers: [osmLayer, wmsLayer, points],
   view: new ol.View({
     center: ol.proj.transform([16.3, 48.2], 'EPSG:4326', 'EPSG:3857'),
     zoom: 11,
@@ -101,12 +104,6 @@ form.onsubmit = function(evt) {
 };
 
  // Standorttest
- var marker = new ol.Feature();
- new ol.layer.Vector({
-   source: new ol.source.Vector({
-     features: [marker]
-   })
- });
   
     function newgeol() {
       var geolocation = new ol.Geolocation({
