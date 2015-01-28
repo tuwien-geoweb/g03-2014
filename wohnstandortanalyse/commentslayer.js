@@ -5,7 +5,15 @@ var osmLayer = new ol.layer.Tile({source: new ol.source.OSM()});
 var wmsLayer = new ol.layer.Image({
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
-    params: {'LAYERS': 'g03_2014:normalizedv,g03_2014:comments'}
+    params: {'LAYERS': 'g03_2014:normalizedv'}
+  }),
+  opacity: 0.6
+});
+
+var l_comments = new ol.layer.Image({
+  source: new ol.source.ImageWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {'LAYERS': 'g03_2014:comments'}
   }),
   opacity: 0.6
 });
@@ -244,6 +252,14 @@ document.getElementById('punkt_kindergarten').onclick = function(e){
       olMap.removeLayer(p_kindergarten);
     }
   };
+  
+document.getElementById('layer_comments').onclick = function(e){
+  if(this.checked==1){
+    olMap.addLayer(l_comments);
+  }else{
+    olMap.removeLayer(l_comments);
+  }
+};
   
  document.getElementById('layer_bezirke').onclick = function(e){
   if(this.checked==1){
